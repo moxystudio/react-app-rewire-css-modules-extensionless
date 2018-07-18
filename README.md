@@ -69,8 +69,14 @@ Available options:
 When using `@storybooks/storybook` with CRA via `getstorybook`, create a `.storybook/webpack.config.js` file and add this code:
 
 ```js
-module.exports = (config, env) => {
-    require('react-app-rewire-css-modules-extensionless')(config, env, { /* options */ })
+module.exports = (storybookBaseConfig, configType) => {
+    storybookBaseConfig = require('react-app-rewire-css-modules-extensionless')(
+        storybookBaseConfig,
+        env.toLowerCase(),
+        { /* options */ }
+    );
+
+    return storybookBaseConfig;
 };
 ```
 
