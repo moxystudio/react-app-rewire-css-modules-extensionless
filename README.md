@@ -18,6 +18,11 @@
 
 Adds CSS modules for CRA apps without requiring the `.modules.css` extension, using [`react-app-rewired`](https://github.com/timarney/react-app-rewired).
 
+This rewire is similar to [`react-app-rewire-css-modules`](https://github.com/codebandits/react-app-rewire-css-modules) with two differences:
+
+- Doesn't require `.modules.css` extension for CSS files in `src/` the source folder.
+- Doesn't force you to install and use the `sass-loader`
+
 
 ## Installation
 
