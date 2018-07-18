@@ -43,6 +43,7 @@ Array [
               "camelCase": undefined,
               "importLoaders": 1,
               "localIdentName": "[name]__[local]___[hash:base64:5]!",
+              "modules": true,
             },
           },
           Object {
@@ -126,6 +127,7 @@ Array [
               "camelCase": undefined,
               "importLoaders": 1,
               "localIdentName": "[name]__[local]___[hash:base64:5]!",
+              "modules": true,
             },
           },
           Object {
@@ -146,6 +148,7 @@ Array [
               "camelCase": undefined,
               "importLoaders": 1,
               "localIdentName": "[name]__[local]___[hash:base64:5]!",
+              "modules": true,
             },
           },
           Object {
@@ -229,6 +232,7 @@ Array [
               "camelCase": "dashes",
               "importLoaders": 1,
               "localIdentName": "foo-[hash:base64:5]!",
+              "modules": true,
             },
           },
           Object {
@@ -249,6 +253,7 @@ Array [
               "camelCase": undefined,
               "importLoaders": 1,
               "localIdentName": "[name]__[local]___[hash:base64:5]!",
+              "modules": true,
             },
           },
           Object {
@@ -269,6 +274,7 @@ Array [
               "camelCase": undefined,
               "importLoaders": 1,
               "localIdentName": "[name]__[local]___[hash:base64:5]!",
+              "modules": true,
             },
           },
           Object {

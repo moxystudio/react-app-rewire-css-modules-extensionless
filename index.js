@@ -46,6 +46,7 @@ const createRewire = (options) => (config, env) => {
 
     cssModulesRule.include = options.include;
     cssModulesRule.exclude = options.exclude;
+    cssModulesRuleCssLoader.options.modules = true;
     cssModulesRuleCssLoader.options.camelCase = options.camelCase;
     cssModulesRuleCssLoader.options.localIdentName = options.localIdentName;
 
