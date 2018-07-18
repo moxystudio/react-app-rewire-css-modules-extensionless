@@ -1,7 +1,7 @@
 {
   "name": "react-app-rewire-css-modules-extensionless",
   "description": "Enables CSS modules without any special extension for CRA apps using react-app-rewired",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "keywords": [
     "react",
     "create-react-app",
