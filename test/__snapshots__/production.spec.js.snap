@@ -1,0 +1,391 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should modify the webpack config correctly 1`] = `
+Array [
+  Object {
+    "enforce": "pre",
+    "include": "path/to/src",
+    "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+    "use": Array [
+      Object {
+        "loader": "path/to/eslint-loader/index.js",
+        "options": Object {},
+      },
+    ],
+  },
+  Object {
+    "oneOf": Array [
+      Object {
+        "loader": "path/to/url-loader/index.js",
+        "options": Object {},
+        "test": Array [
+          /\\\\\\.bmp\\$/,
+          /\\\\\\.gif\\$/,
+          /\\\\\\.jpe\\?g\\$/,
+          /\\\\\\.png\\$/,
+        ],
+      },
+      Object {
+        "include": "path/to/src",
+        "loader": "path/to/babel-loader/lib/index.js",
+        "options": Object {},
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+      },
+      Object {
+        "exclude": undefined,
+        "include": "<PROJECT_ROOT>/src",
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": undefined,
+              "importLoaders": 1,
+              "localIdentName": "[hash:base64:5]!",
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "exclude": Array [
+          /\\\\\\.js\\$/,
+          /\\\\\\.html\\$/,
+          /\\\\\\.json\\$/,
+        ],
+        "loader": "path/to/file-loader/dist/cjs.js",
+        "options": Object {
+          "name": "static/media/[name].[hash:8].[ext]",
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`should override the default include / exclude 1`] = `
+Array [
+  Object {
+    "enforce": "pre",
+    "include": "path/to/src",
+    "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+    "use": Array [
+      Object {
+        "loader": "path/to/eslint-loader/index.js",
+        "options": Object {},
+      },
+    ],
+  },
+  Object {
+    "oneOf": Array [
+      Object {
+        "loader": "path/to/url-loader/index.js",
+        "options": Object {},
+        "test": Array [
+          /\\\\\\.bmp\\$/,
+          /\\\\\\.gif\\$/,
+          /\\\\\\.jpe\\?g\\$/,
+          /\\\\\\.png\\$/,
+        ],
+      },
+      Object {
+        "include": "path/to/src",
+        "loader": "path/to/babel-loader/lib/index.js",
+        "options": Object {},
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+      },
+      Object {
+        "exclude": "bar",
+        "include": "foo",
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": undefined,
+              "importLoaders": 1,
+              "localIdentName": "[hash:base64:5]!",
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "exclude": undefined,
+        "include": "<PROJECT_ROOT>/src",
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": undefined,
+              "importLoaders": 1,
+              "localIdentName": "[hash:base64:5]!",
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "exclude": Array [
+          /\\\\\\.js\\$/,
+          /\\\\\\.html\\$/,
+          /\\\\\\.json\\$/,
+        ],
+        "loader": "path/to/file-loader/dist/cjs.js",
+        "options": Object {
+          "name": "static/media/[name].[hash:8].[ext]",
+        },
+      },
+    ],
+  },
+]
+`;
+
+exports[`should pass options to the css loader 1`] = `
+Array [
+  Object {
+    "enforce": "pre",
+    "include": "path/to/src",
+    "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+    "use": Array [
+      Object {
+        "loader": "path/to/eslint-loader/index.js",
+        "options": Object {},
+      },
+    ],
+  },
+  Object {
+    "oneOf": Array [
+      Object {
+        "loader": "path/to/url-loader/index.js",
+        "options": Object {},
+        "test": Array [
+          /\\\\\\.bmp\\$/,
+          /\\\\\\.gif\\$/,
+          /\\\\\\.jpe\\?g\\$/,
+          /\\\\\\.png\\$/,
+        ],
+      },
+      Object {
+        "include": "path/to/src",
+        "loader": "path/to/babel-loader/lib/index.js",
+        "options": Object {},
+        "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
+      },
+      Object {
+        "exclude": undefined,
+        "include": "<PROJECT_ROOT>/src",
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": "dashes",
+              "importLoaders": 1,
+              "localIdentName": "foo-[hash:base64:5]!",
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "exclude": "bar",
+        "include": "foo",
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": undefined,
+              "importLoaders": 1,
+              "localIdentName": "[hash:base64:5]!",
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "exclude": undefined,
+        "include": "<PROJECT_ROOT>/src",
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": undefined,
+              "importLoaders": 1,
+              "localIdentName": "[hash:base64:5]!",
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "loader": Array [
+          Object {
+            "loader": "path/to/extract-text-webpack-plugin/dist/loader.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/style-loader/index.js",
+            "options": Object {},
+          },
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "importLoaders": 1,
+              "minimize": true,
+              "sourceMap": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+        "test": /\\\\\\.css\\$/,
+      },
+      Object {
+        "exclude": Array [
+          /\\\\\\.js\\$/,
+          /\\\\\\.html\\$/,
+          /\\\\\\.json\\$/,
+        ],
+        "loader": "path/to/file-loader/dist/cjs.js",
+        "options": Object {
+          "name": "static/media/[name].[hash:8].[ext]",
+        },
+      },
+    ],
+  },
+]
+`;
