@@ -5,7 +5,56 @@ const rewireCssModulesExtensionless = require('..');
 
 expect.addSnapshotSerializer(serializerPath);
 
-const mockConfig = {
+const mockDevelopmentConfig = {
+    module: {
+        rules: [
+            {
+                test: /\.(js|jsx|mjs)$/,
+                enforce: 'pre',
+                use: [
+                    { options: {}, loader: 'path/to/eslint-loader/index.js' },
+                ],
+                include: 'path/to/src',
+            },
+            {
+                oneOf: [
+                    {
+                        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+                        loader: 'path/to/url-loader/index.js',
+                        options: {},
+                    },
+                    {
+                        test: /\.(js|jsx|mjs)$/,
+                        include: 'path/to/src',
+                        loader: 'path/to/babel-loader/lib/index.js',
+                        options: {},
+                    },
+                    {
+                        test: /\.css$/,
+                        use: [
+                            'path/to/style-loader/index.js',
+                            {
+                                loader: 'path/to/css-loader/index.js',
+                                options: { importLoaders: 1 },
+                            },
+                            {
+                                loader: 'path/to/postcss-loader/lib/index.js',
+                                options: {},
+                            },
+                        ],
+                    },
+                    {
+                        exclude: [/\.js$/, /\.html$/, /\.json$/],
+                        loader: 'path/to/file-loader/dist/cjs.js',
+                        options: { name: 'static/media/[name].[hash:8].[ext]' },
+                    },
+                ],
+            },
+        ],
+    },
+};
+
+const mockProductionConfig = {
     module: {
         rules: [
             {
@@ -65,14 +114,20 @@ const mockConfig = {
     },
 };
 
-it('should modify the webpack config correctly', () => {
-    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'production');
+it('should modify the webpack config correctly for development', () => {
+    const result = rewireCssModulesExtensionless(mockDevelopmentConfig, 'development');
 
-    expect(result.module.rules).toMatchSnapshot();
+    expect(result).toMatchSnapshot();
+});
+
+it('should modify the webpack config correctly for production', () => {
+    const result = rewireCssModulesExtensionless(mockProductionConfig, 'production');
+
+    expect(result).toMatchSnapshot();
 });
 
 it('should override the default include / exclude', () => {
-    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'production', {
+    const result = rewireCssModulesExtensionless.webpack(mockDevelopmentConfig, 'development', {
         include: 'foo',
         exclude: 'bar',
     });
@@ -81,7 +136,7 @@ it('should override the default include / exclude', () => {
 });
 
 it('should pass options to the css loader', () => {
-    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'production', {
+    const result = rewireCssModulesExtensionless.webpack(mockDevelopmentConfig, 'development', {
         camelCase: 'dashes',
         localIdentName: 'foo-[hash:base64:5]!',
     });
@@ -90,9 +145,9 @@ it('should pass options to the css loader', () => {
 });
 
 it('should allow usage with compose', () => {
-    expect(rewireCssModulesExtensionless.webpack(mockConfig, 'production'))
-    .toEqual(rewireCssModulesExtensionless.webpack()(mockConfig, 'production'));
+    expect(rewireCssModulesExtensionless.webpack(mockDevelopmentConfig, 'development'))
+    .toEqual(rewireCssModulesExtensionless.webpack()(mockDevelopmentConfig, 'development'));
 
-    expect(rewireCssModulesExtensionless.webpack(mockConfig, 'production', { camelCase: 'dashes' }))
-    .toEqual(rewireCssModulesExtensionless.webpack({ camelCase: 'dashes' })(mockConfig, 'production'));
+    expect(rewireCssModulesExtensionless.webpack(mockDevelopmentConfig, 'development', { camelCase: 'dashes' }))
+    .toEqual(rewireCssModulesExtensionless.webpack({ camelCase: 'dashes' })(mockDevelopmentConfig, 'development'));
 });

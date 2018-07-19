@@ -22,6 +22,7 @@ This rewire is similar to [`react-app-rewire-css-modules`](https://github.com/co
 
 - Doesn't require `.modules.css` extension for CSS files in `src/` the source folder.
 - Doesn't force you to install and use the `sass-loader`
+- Setups jest
 
 
 ## Installation

@@ -3,7 +3,7 @@
 exports[`should modify the jest config correctly 1`] = `
 Object {
   "moduleNameMapper": Object {
-    "/.css$": "<PROJECT_ROOT>/node_modules/identity-obj-proxy/src/index.js",
+    "^.+/.css$": "<PROJECT_ROOT>/node_modules/identity-obj-proxy/src/index.js",
     "^react-native$": "react-native-web",
   },
   "transform": Object {
