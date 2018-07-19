@@ -82,27 +82,6 @@ Available options:
 | localIdentName | The localIdentName option to pass to the `css-loader` | string | `[hash:base64:5]!` for production, `[name]__[local]___[hash:base64:5]!` otherwise |
 
 
-### Setting up jest
-
-
-
-## Usage with Storybook
-
-When using `@storybooks/storybook` with CRA via `getstorybook`, create a `.storybook/webpack.config.js` file and add this code:
-
-```js
-module.exports = (storybookBaseConfig, configType) => {
-    storybookBaseConfig = require('react-app-rewire-css-modules-extensionless')(
-        storybookBaseConfig,
-        env.toLowerCase(),
-        { /* options */ }
-    );
-
-    return storybookBaseConfig;
-};
-```
-
-
 ## Tests
 
 `$ npm test`   
