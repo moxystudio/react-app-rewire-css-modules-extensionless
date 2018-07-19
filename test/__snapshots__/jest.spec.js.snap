@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should modify the jest config correctly 1`] = `
+Object {
+  "moduleNameMapper": Object {
+    "/.css$": "<PROJECT_ROOT>/node_modules/identity-obj-proxy/src/index.js",
+    "^react-native$": "react-native-web",
+  },
+  "transform": Object {
+    "^(?!.*/.(js|jsx|mjs|css|json|graphql)$)": "path/to/config/jest/fileTransform.js",
+    "^.+/.(graphql)$": "path/to/config/jest/graphqlTransform.js",
+    "^.+/.(js|jsx|mjs)$": "path/to/config/jest/babelTransform.js",
+  },
+  "transformIgnorePatterns": Array [
+    "[///]node_modules[///].+/.(js|jsx|mjs)$",
+  ],
+}
+`;

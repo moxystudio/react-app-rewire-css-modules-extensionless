@@ -55,13 +55,13 @@ const mockConfig = {
 };
 
 it('should modify the webpack config correctly', () => {
-    const result = rewireCssModulesExtensionless(mockConfig, 'development');
+    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'development');
 
     expect(result.module.rules).toMatchSnapshot();
 });
 
 it('should override the default include / exclude', () => {
-    const result = rewireCssModulesExtensionless(mockConfig, 'development', {
+    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'development', {
         include: 'foo',
         exclude: 'bar',
     });
@@ -70,7 +70,7 @@ it('should override the default include / exclude', () => {
 });
 
 it('should pass options to the css loader', () => {
-    const result = rewireCssModulesExtensionless(mockConfig, 'development', {
+    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'development', {
         camelCase: 'dashes',
         localIdentName: 'foo-[hash:base64:5]!',
     });
@@ -79,9 +79,9 @@ it('should pass options to the css loader', () => {
 });
 
 it('should allow usage with compose', () => {
-    expect(rewireCssModulesExtensionless(mockConfig, 'development'))
-    .toEqual(rewireCssModulesExtensionless()(mockConfig, 'development'));
+    expect(rewireCssModulesExtensionless.webpack(mockConfig, 'development'))
+    .toEqual(rewireCssModulesExtensionless.webpack()(mockConfig, 'development'));
 
-    expect(rewireCssModulesExtensionless(mockConfig, 'development', { camelCase: 'dashes' }))
-    .toEqual(rewireCssModulesExtensionless({ camelCase: 'dashes' })(mockConfig, 'development'));
+    expect(rewireCssModulesExtensionless.webpack(mockConfig, 'development', { camelCase: 'dashes' }))
+    .toEqual(rewireCssModulesExtensionless.webpack({ camelCase: 'dashes' })(mockConfig, 'development'));
 });

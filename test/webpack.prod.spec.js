@@ -66,13 +66,13 @@ const mockConfig = {
 };
 
 it('should modify the webpack config correctly', () => {
-    const result = rewireCssModulesExtensionless(mockConfig, 'production');
+    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'production');
 
     expect(result.module.rules).toMatchSnapshot();
 });
 
 it('should override the default include / exclude', () => {
-    const result = rewireCssModulesExtensionless(mockConfig, 'production', {
+    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'production', {
         include: 'foo',
         exclude: 'bar',
     });
@@ -81,7 +81,7 @@ it('should override the default include / exclude', () => {
 });
 
 it('should pass options to the css loader', () => {
-    const result = rewireCssModulesExtensionless(mockConfig, 'production', {
+    const result = rewireCssModulesExtensionless.webpack(mockConfig, 'production', {
         camelCase: 'dashes',
         localIdentName: 'foo-[hash:base64:5]!',
     });
@@ -90,9 +90,9 @@ it('should pass options to the css loader', () => {
 });
 
 it('should allow usage with compose', () => {
-    expect(rewireCssModulesExtensionless(mockConfig, 'production'))
-    .toEqual(rewireCssModulesExtensionless()(mockConfig, 'production'));
+    expect(rewireCssModulesExtensionless.webpack(mockConfig, 'production'))
+    .toEqual(rewireCssModulesExtensionless.webpack()(mockConfig, 'production'));
 
-    expect(rewireCssModulesExtensionless(mockConfig, 'production', { camelCase: 'dashes' }))
-    .toEqual(rewireCssModulesExtensionless({ camelCase: 'dashes' })(mockConfig, 'production'));
+    expect(rewireCssModulesExtensionless.webpack(mockConfig, 'production', { camelCase: 'dashes' }))
+    .toEqual(rewireCssModulesExtensionless.webpack({ camelCase: 'dashes' })(mockConfig, 'production'));
 });

@@ -34,13 +34,24 @@ This rewire is similar to [`react-app-rewire-css-modules`](https://github.com/co
 In the `config-overrides.js` you created for `react-app-rewired` add this code:
 
 ```js
-module.exports = (config, env) => {
-    config = require('react-app-rewire-css-modules-extensionless')(config, env, { /* options */ });
+module.exports = {
+    webpack: (config, env) => {
+        config = require('react-app-rewire-css-modules-extensionless').webpack(config, env, { /* options */ });
+        // The line below is equivalent
+        // config = require('react-app-rewire-css-modules-extensionless')(config, env, { /* options */ });
 
-    // You may apply other rewires as well
+        // You may apply other rewires as well
 
-    return config;
-}
+        return config;
+    },
+    jest: (config) => {
+        config = require('react-app-rewire-css-modules-extensionless').jest(config);
+
+        // You may apply other rewires as well
+
+        return config;
+    },
+};
 ```
 
 If you are using the `compose` utility of `react-app-rewired`:
@@ -48,20 +59,31 @@ If you are using the `compose` utility of `react-app-rewired`:
 ```js
 const { compose } = require('react-app-rewired');
 
-module.exports = compose(
-    require('react-app-rewire-css-modules-extensionless')({ /* options */ })
-    // ... other rewires
-)
+module.exports = {
+    webpack: compose(
+        require('react-app-rewire-css-modules-extensionless').webpack({ /* options */ })
+        // The line below is equivalent
+        require('react-app-rewire-css-modules-extensionless')({ /* options */ })
+        // ... other rewires
+    ),
+    jest: compose(
+        require('react-app-rewire-css-modules-extensionless').jest()
+        // ... other rewires
+    ),
+};
 ```
 
 Available options:
-
 
 | Name   | Description   | Type     | Default |
 | ------ | ------------- | -------- | ------- |
 | include | The loader include condition | string/Array/RegExp/Function | *src folder* |
 | exclude | The loader exclude condition | string/Array/RegExp/Function | |
 | localIdentName | The localIdentName option to pass to the `css-loader` | string | `[hash:base64:5]!` for production, `[name]__[local]___[hash:base64:5]!` otherwise |
+
+
+### Setting up jest
+
 
 
 ## Usage with Storybook
