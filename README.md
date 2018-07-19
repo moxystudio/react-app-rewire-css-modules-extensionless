@@ -27,7 +27,9 @@ This rewire is similar to [`react-app-rewire-css-modules`](https://github.com/co
 
 ## Installation
 
-`$ npm install --save-dev eslint react-app-rewire-css-modules-extensionless`
+```sh
+$ npm install --save-dev react-app-rewire-css-modules-extensionless
+```
 
 
 ## Usage
@@ -87,8 +89,10 @@ If you modify `include` and `exclude`, it's advised to use `fs.realpathSync` so 
 
 ## Tests
 
-`$ npm test`   
-`$ npm test -- --watch` during development
+```sh
+$ npm test
+$ npm test -- --watch # during development
+```
 
 
 ## License
