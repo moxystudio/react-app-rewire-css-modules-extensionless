@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/moxystudio/react-app-rewire-css-modules-extensionless/compare/v1.0.3...v1.1.0) (2018-07-19)
+
+
+### Features
+
+* add support for jest ([5d0dcd8](https://github.com/moxystudio/react-app-rewire-css-modules-extensionless/commit/5d0dcd8))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/moxystudio/react-app-rewire-css-modules-extensionless/compare/v1.0.2...v1.0.3) (2018-07-18)
 
