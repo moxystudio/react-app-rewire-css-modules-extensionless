@@ -84,7 +84,7 @@ Available options:
 | exclude | The loader exclude condition | string/Array/RegExp/Function | |
 | localIdentName | The localIdentName option to pass to the `css-loader` | string | `[hash:base64:5]!` for production, `[name]__[local]___[hash:base64:5]!` otherwise |
 
-If you modify `include` and `exclude`, it's advised to use `fs.realpathSync` so that it plays well with packages linked with `npm link`. Alternatively, you may disable [`resolve.symlinks`](https://webpack.js.org/configuration/resolve/#resolve-symlinks) in your webpack configuration.
+If you modify `include` and `exclude` to point to packages in `node_modules`, it's advised to use `fs.realpathSync` so that it plays well with packages linked with `npm link`. Alternatively, you may disable [`resolve.symlinks`](https://webpack.js.org/configuration/resolve/#resolve-symlinks) in your webpack configuration.
 
 
 ## Tests
