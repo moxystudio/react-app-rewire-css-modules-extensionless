@@ -80,6 +80,7 @@ Available options:
 
 | Name   | Description   | Type     | Default |
 | ------ | ------------- | -------- | ------- |
+| test | The loader test pattern | string/RegExp | `/\.css$/` |
 | include | The loader include condition | string/Array/RegExp/Function | *src folder* |
 | exclude | The loader exclude condition | string/Array/RegExp/Function | |
 | localIdentName | The localIdentName option to pass to the `css-loader` | string | `[hash:base64:5]!` for production, `[name]__[local]___[hash:base64:5]!` otherwise |
