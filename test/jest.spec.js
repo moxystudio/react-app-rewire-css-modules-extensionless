@@ -1,6 +1,7 @@
 'use strict';
 
 const serializerPath = require('jest-serializer-path');
+const cloneDeep = require('lodash.clonedeep');
 const rewireCssModulesExtensionless = require('..');
 
 expect.addSnapshotSerializer(serializerPath);
@@ -21,12 +22,12 @@ const mockConfig = {
 };
 
 it('should modify the jest config correctly', () => {
-    const result = rewireCssModulesExtensionless.jest(mockConfig);
+    const result = rewireCssModulesExtensionless.jest(cloneDeep(mockConfig));
 
     expect(result).toMatchSnapshot();
 });
 
 it('should allow usage with compose', () => {
-    expect(rewireCssModulesExtensionless.jest(mockConfig))
-    .toEqual(rewireCssModulesExtensionless.jest()(mockConfig));
+    expect(rewireCssModulesExtensionless.jest(cloneDeep(mockConfig)))
+    .toEqual(rewireCssModulesExtensionless.jest()(cloneDeep(mockConfig)));
 });

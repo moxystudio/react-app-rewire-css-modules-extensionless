@@ -126,8 +126,9 @@ it('should modify the webpack config correctly for production', () => {
     expect(result).toMatchSnapshot();
 });
 
-it('should override the default include / exclude', () => {
+it('should override the default test / include / exclude', () => {
     const result = rewireCssModulesExtensionless.webpack(mockDevelopmentConfig, 'development', {
+        test: 'css',
         include: 'foo',
         exclude: 'bar',
     });

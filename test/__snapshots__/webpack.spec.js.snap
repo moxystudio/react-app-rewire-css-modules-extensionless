@@ -194,7 +194,7 @@ Object {
 }
 `;
 
-exports[`should override the default include / exclude 1`] = `
+exports[`should override the default test / include / exclude 1`] = `
 Array [
   Object {
     "enforce": "pre",
@@ -228,7 +228,7 @@ Array [
       Object {
         "exclude": "bar",
         "include": "foo",
-        "test": /\\\\\\.css\\$/,
+        "test": "css",
         "use": Array [
           "path/to/style-loader/index.js",
           Object {
@@ -331,6 +331,27 @@ Array [
         "test": /\\\\\\.\\(js\\|jsx\\|mjs\\)\\$/,
       },
       Object {
+        "exclude": "bar",
+        "include": "foo",
+        "test": "css",
+        "use": Array [
+          "path/to/style-loader/index.js",
+          Object {
+            "loader": "path/to/css-loader/index.js",
+            "options": Object {
+              "camelCase": undefined,
+              "importLoaders": 1,
+              "localIdentName": "[name]__[local]___[hash:base64:5]!",
+              "modules": true,
+            },
+          },
+          Object {
+            "loader": "path/to/postcss-loader/lib/index.js",
+            "options": Object {},
+          },
+        ],
+      },
+      Object {
         "exclude": undefined,
         "include": "<PROJECT_ROOT>/src",
         "test": /\\\\\\.css\\$/,
@@ -342,27 +363,6 @@ Array [
               "camelCase": "dashes",
               "importLoaders": 1,
               "localIdentName": "foo-[hash:base64:5]!",
-              "modules": true,
-            },
-          },
-          Object {
-            "loader": "path/to/postcss-loader/lib/index.js",
-            "options": Object {},
-          },
-        ],
-      },
-      Object {
-        "exclude": "bar",
-        "include": "foo",
-        "test": /\\\\\\.css\\$/,
-        "use": Array [
-          "path/to/style-loader/index.js",
-          Object {
-            "loader": "path/to/css-loader/index.js",
-            "options": Object {
-              "camelCase": undefined,
-              "importLoaders": 1,
-              "localIdentName": "[name]__[local]___[hash:base64:5]!",
               "modules": true,
             },
           },
