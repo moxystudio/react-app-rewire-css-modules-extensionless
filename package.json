@@ -17,6 +17,7 @@
     "url": "git@github.com:moxystudio/react-app-rewire-css-modules-extensionless.git"
   },
   "license": "MIT",
+  "main": "index.js",
   "files": [
     "index.js",
     "lib"
