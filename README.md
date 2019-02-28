@@ -1,6 +1,6 @@
 # react-app-rewire-css-modules-extensionless
 
-[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url] [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependency status][david-dm-image]][david-dm-url] [![Dev Dependency status][david-dm-dev-image]][david-dm-dev-url] 
 
 [npm-url]:https://npmjs.org/package/react-app-rewire-css-modules-extensionless
 [npm-image]:http://img.shields.io/npm/v/react-app-rewire-css-modules-extensionless.svg
@@ -13,8 +13,6 @@
 [david-dm-image]:https://img.shields.io/david/moxystudio/react-app-rewire-css-modules-extensionless.svg
 [david-dm-dev-url]:https://david-dm.org/moxystudio/react-app-rewire-css-modules-extensionless?type=dev
 [david-dm-dev-image]:https://img.shields.io/david/dev/moxystudio/react-app-rewire-css-modules-extensionless.svg
-[greenkeeper-image]:https://badges.greenkeeper.io/moxystudio/react-app-rewire-css-modules-extensionless.svg
-[greenkeeper-url]:https://greenkeeper.io
 
 Adds CSS modules for CRA apps without requiring the `.modules.css` extension, using [`react-app-rewired`](https://github.com/timarney/react-app-rewired).
 
